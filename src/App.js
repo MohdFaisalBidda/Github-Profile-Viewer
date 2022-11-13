@@ -1,25 +1,34 @@
 import logo from './logo.svg';
+import {useState} from 'react'
+import { SearchBar } from './Components/SearchBar';
+import { Card } from './Components/Card';
 import './App.css';
 
 function App() {
+  const [searchQuery, setSearchQuery] = useState("")
+  const [didSubmit, setDidSubmit] = useState(false)
+
+  const onSubmit = () => {
+    setDidSubmit(true);
+  }
+
+  const onChange = (e) => {
+    setSearchQuery(e.target.value);
+    setDidSubmit(false);
+  }
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <SearchBar
+        onChange={onChange}
+        onClick={onSubmit}
+        value={searchQuery}
+      />
+      {didSubmit && <Card username={searchQuery} />
+      }
     </div>
-  );
+  )
 }
 
 export default App;
