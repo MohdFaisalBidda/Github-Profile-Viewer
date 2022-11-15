@@ -47,10 +47,23 @@ export const Card = ({ username }) => {
       {error === true && (<div className="empty">
         <h3>User Not Found</h3>
       </div>)}
+
       <div className="box">
         <div className="line"></div>
-        <div className="img"><img src={avatarUrl} alt="" srcset="" /></div>
+        <div className="img">
+          <img src={avatarUrl} alt="" srcset="" />
         </div>
+        <div className="content">
+          <div className="details">
+            <h2>{name}<br /><span><a href={"https://github.com/" + username}>@{username}</a></span> <br /> <span>{location}</span></h2>
+            <div className="data">
+              <h3>{publicRepos} <br /> <span>REPOS</span></h3>
+              <h3>{following} <br /> <span>FOLLOWING</span></h3>
+              <h3>{followers} <br /> <span>FOLLOWERS</span></h3>
+            </div>
+          </div>
+        </div>
+      </div>
 
 
       {name && (
@@ -77,7 +90,7 @@ export const Card = ({ username }) => {
               </div>
             </div>
 
-            <table className="table"><thead><tr><th scope="row">REPOS</th><th scope="row">FOLLOWING</th><th scope="row">FOLLOWERS</th></tr></thead><tbody><tr><td>{publicRepos}</td><td>{following}</td><td>{followers}</td></tr></tbody></table></div></div>) || (error === false &&
+            <table className="table"><thead><tr><th scope="row"></th><th scope="row"></th><th scope="row"></th></tr></thead><tbody><tr><td>{publicRepos}</td><td>{following}</td><td>{followers}</td></tr></tbody></table></div></div>) || (error === false &&
               (<div className="loader" ><ClipLoader color="black" size={60} loading />
               </div>))
       }
