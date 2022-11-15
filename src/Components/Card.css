@@ -1,0 +1,93 @@
+ body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+ }
+
+.box{
+    position: relative;
+    width: 450px;
+    height: 450px;
+    background-color: white;
+    margin-top: 300px;
+}
+.box .line{
+    position: absolute;
+    inset: 0;
+    background: wheat;
+    overflow: hidden;
+}
+.box .line::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    height: 120px;
+    background: linear-gradient(transparent,#45f3ff,#45f3ff,#45f3ff,transparent);
+    animation: animate 4s linear infinite;
+    
+}
+@keyframes animate {
+    0%{
+        transform: translate(-50%,-50%) rotate(0deg);
+
+    }
+    100%{
+        transform: translate(-50%,-50%) rotate(360deg);
+
+    }
+}
+.box .line::after{
+    content: '';
+    position: absolute;
+    inset: 3px;
+    background: black;
+}
+.box .img{
+    position: absolute;
+    top: -20%;
+    left: 50%;
+    transform: translate(-50%);
+    width: 250px;
+    height: 250px;
+    background: white;
+    z-index: 10;
+    overflow: hidden;
+}
+
+.box .img::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    height: 120px;
+    background: linear-gradient(transparent,#ff3c7b,#ff3c7b,#ff3c7b,transparent);
+    animation: animate2 4s linear infinite;
+}
+@keyframes animate2 {
+    0%{
+        transform: translate(-50%) rotate(360deg)
+    }
+    100%{
+        transform: translate(-50%) rotate(0deg)
+    }
+}
+.box .img::after{
+    content: '';
+    position: absolute;
+    inset: 3px;
+    background: black;
+}
+.box .img img{
+    position: absolute;
+    z-index: 1;
+    top: 13px;
+    left: 15px;
+    height: calc(100% - 25px);
+    width: calc(100% - 25px);
+
+}
+

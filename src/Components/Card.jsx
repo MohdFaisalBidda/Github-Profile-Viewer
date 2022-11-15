@@ -1,6 +1,7 @@
 import React from "react"
 import { useState, useEffect } from "react"
 import ClipLoader from "react-spinners/ClipLoader";
+import "./Card.css"
 
 export const Card = ({ username }) => {
   const [name, setName] = useState("");
@@ -46,9 +47,14 @@ export const Card = ({ username }) => {
       {error === true && (<div className="empty">
         <h3>User Not Found</h3>
       </div>)}
+      <div className="box">
+        <div className="line"></div>
+        <div className="img"><img src={avatarUrl} alt="" srcset="" /></div>
+        </div>
+
 
       {name && (
-        <div className="container">
+        <div className="box">
           <div className="row">
             <div className="column col-lg-3 col-sm-6">
               <div className="card hovercard">
