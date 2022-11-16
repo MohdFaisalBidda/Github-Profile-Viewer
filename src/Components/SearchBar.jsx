@@ -1,20 +1,22 @@
 import React from "react"
+import "./SearchBar.css"
 
 
 export const SearchBar = ({ value, onChange, onClick }) => {
   return (
     <>
-      <div style={{ display: "flex", textAlign: "center", justifyContent: "center", height: "38px" }} className="container">
-
+      <div>
+        <div className="inputBox">
         <input
           className="form-control"
           type="text"
-          placeholder="Search github username..."
+          required="required"
           onChange={onChange}
           value={value}
         />
-
-        <button className="btn btn-primary mx-1" onClick={onClick}>Search</button>
+        <span>Username</span>
+        <button className="btn" onClick={onClick}>Search</button>
+        </div>
 
 
 

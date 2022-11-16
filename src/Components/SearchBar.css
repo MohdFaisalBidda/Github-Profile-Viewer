@@ -1,0 +1,49 @@
+
+.inputBox{
+    display: flex;
+    position: relative;
+    margin: auto;
+    width: 250px;
+    margin-top: 20px;
+}
+.inputBox input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #45f3ff;
+    background: #0a192f;
+    border-radius: 5px;
+    outline: none;
+    color: white;
+    font-size: 1.2em;
+    margin-right:8px;
+}
+.inputBox span{
+    position: absolute;
+    left: 0;
+    padding: 8px;
+    pointer-events: none;
+    font-size: 1.2em;
+    color: rgba(255, 255, 255, 0.25);
+    text-transform: uppercase;
+    transition: 0.4s;
+}
+
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span{
+    color: #45f3ff;
+    transform: translateX(10px) translateY(-13px);
+    font-size: 1em;
+    padding: 0 10px;
+    background: #0a192f;
+}
+.btn{
+   background: #0a192f;
+   border: 1px solid #45f3ff;
+   color: #45f3ff;
+   cursor: pointer;
+   transition: 0.4s ease-in-out
+}
+.btn:hover{
+    color: black;
+    background: #45f3ff;
+}

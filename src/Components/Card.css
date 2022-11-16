@@ -146,3 +146,11 @@
     font-weight: 400;
     color: #fff;
 }
+
+.empty{
+    margin-top: 100px;
+}
+.empty h3{
+    font-size: 2rem;
+    color: #45f3ff;
+}
