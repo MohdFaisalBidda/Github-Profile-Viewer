@@ -168,6 +168,7 @@
     .box {
         position: relative;
         width: 250px;
+        margin-top: 250px;
     }
     .box .content .details .data{
         width: 200px;
