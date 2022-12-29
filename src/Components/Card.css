@@ -155,6 +155,11 @@
     font-size: 2rem;
     color: #45f3ff;
 }
+.loader{
+    text-align: center;
+    margin: auto;
+    margin-top: 20%;
+}
 
 @media only screen and (max-width: 800px) {
     body{

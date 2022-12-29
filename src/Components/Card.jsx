@@ -1,9 +1,11 @@
 import React from "react"
 import { useState, useEffect } from "react"
 import "./Card.css"
+import { BounceLoader } from "react-spinners"
 
 export const Card = ({ username }) => {
   const [name, setName] = useState("");
+  const [loading, setLoading] = useState(false);
   const [avatarUrl, setAvatarUrl] = useState("");
   const [location, setLocation] = useState("");
   const [publicRepos, setPublicRepos] = useState(0);
@@ -19,6 +21,7 @@ export const Card = ({ username }) => {
         if (results.ok) return results.json();
       })
       .then(data => {
+        setLoading(true)
         setName(data.name);
         setAvatarUrl(data.avatar_url);
         setLocation(data.location);
@@ -59,6 +62,7 @@ export const Card = ({ username }) => {
         </div>
       </div>) 
       }
+      {!loading && (<BounceLoader color="#45f3ff" className="loader"/>)}
 
 
     </>
